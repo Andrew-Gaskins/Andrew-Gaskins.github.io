@@ -1,40 +1,17 @@
 // var userChoice
 // var userChoice = prompt("Do you choose rock, paper or scissors?");
-var computerChoice = Math.random();
-if (computerChoice < 0.34) {
-	computerChoice = "Rock";
-} else if(computerChoice <= 0.67) {
-	computerChoice = "Paper";
-} else {
-	computerChoice = "Scissors";
+
+function computerChoice() {
+    var choice = Math.random();
+    if (choice < 0.34) {
+    	choice = "Rock";
+    } else if(choice <= 0.67) {
+    	choice = "Paper";
+    } else {
+    	choice = "Scissors";
+    }
+    return choice;
 }
-
-
-// $('.choice').click(function() {
-// 	$('#useranswer').html(userChoice);
-// 	$('#companswer').html(computerChoice);
-//   $('#results').html(compare(userChoice, computerChoice));
-//   });
-
-$('#rock').click(function() {
-	$('#useranswer').html("Rock");
-	$('#companswer').html(computerChoice);
-  $('#results').html(compare("Rock", computerChoice));
-  });
-
-$('#paper').click(function() {
-	$('#useranswer').html("Paper");
-	$('#companswer').html(computerChoice);
-  $('#results').html(compare("Paper", computerChoice));
-  });
-
-$('#scissors').click(function() {
-	$('#useranswer').html("Scissors");
-	$('#companswer').html(computerChoice);
-  $('#results').html(compare("Scissors", computerChoice));
-  });
-
-
 
 var compare = function(choice1,choice2) {
     if (choice1 === choice2) {
@@ -65,9 +42,39 @@ var compare = function(choice1,choice2) {
         }
     }
     else {
-    	return "You made an invalid selection. Great job."
+        return "You made an invalid selection. Great job."
     }
 }
+
+
+
+$('#rock').click(function() {
+    var compplay = computerChoice()
+    console.log(compplay);
+	$('#useranswer').html("Rock");
+	$('#companswer').html(compplay);
+  $('#results').html(compare("Rock", compplay));
+  });
+
+$('#paper').click(function() {
+    var compplay = computerChoice()
+    console.log(compplay);
+
+	$('#useranswer').html("Paper");
+	$('#companswer').html(compplay);
+  $('#results').html(compare("Paper", compplay));
+  });
+
+$('#scissors').click(function() {
+    var compplay = computerChoice()
+    console.log(compplay);
+
+	$('#useranswer').html("Scissors");
+	$('#companswer').html(compplay);
+  $('#results').html(compare("Scissors", compplay));
+  });
+
+
 
 
 
