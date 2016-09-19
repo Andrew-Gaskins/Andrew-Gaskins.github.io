@@ -2,11 +2,11 @@
 // var userChoice = prompt("Do you choose rock, paper or scissors?");
 var computerChoice = Math.random();
 if (computerChoice < 0.34) {
-	computerChoice = "rock";
+	computerChoice = "Rock";
 } else if(computerChoice <= 0.67) {
-	computerChoice = "paper";
+	computerChoice = "Paper";
 } else {
-	computerChoice = "scissors";
+	computerChoice = "Scissors";
 }
 
 
@@ -17,21 +17,21 @@ if (computerChoice < 0.34) {
 //   });
 
 $('#rock').click(function() {
-	$('#useranswer').html("rock");
+	$('#useranswer').html("Rock");
 	$('#companswer').html(computerChoice);
-  $('#results').html(compare("rock", computerChoice));
+  $('#results').html(compare("Rock", computerChoice));
   });
 
 $('#paper').click(function() {
-	$('#useranswer').html("paper");
+	$('#useranswer').html("Paper");
 	$('#companswer').html(computerChoice);
-  $('#results').html(compare("paper", computerChoice));
+  $('#results').html(compare("Paper", computerChoice));
   });
 
 $('#scissors').click(function() {
-	$('#useranswer').html("scissors");
+	$('#useranswer').html("Scissors");
 	$('#companswer').html(computerChoice);
-  $('#results').html(compare("scissors", computerChoice));
+  $('#results').html(compare("Scissors", computerChoice));
   });
 
 
@@ -40,24 +40,24 @@ var compare = function(choice1,choice2) {
     if (choice1 === choice2) {
         return "It's a tie. Try again"
     }
-    else if (choice1 === "rock") {
-        if (choice2 === "scissors") {
+    else if (choice1 === "Rock") {
+        if (choice2 === "Scissors") {
             return "Rock crushes scissors. You win."
         }
         else {
             return "Paper covers rock. You lose."
         }
     }    
-    else if (choice1 === "paper") {
-        if (choice2 === "rock") {
+    else if (choice1 === "Paper") {
+        if (choice2 === "Rock") {
             return "Paper covers rock. You win."
         }
         else {
             return "Scissors cuts paper. You lose."
         }
     }    
-    else if (choice1 === "scissors") {
-        if (choice2 ==="paper") {
+    else if (choice1 === "Scissors") {
+        if (choice2 ==="Paper") {
             return "Scissors cuts paper. You win."
         }
         else {
